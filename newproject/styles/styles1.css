@@ -234,7 +234,7 @@ li a:hover {
 }
 
 .parentTxt {
-  margin: 50px 400px;
+  margin: 50px 100px;
 }
 
 #libraryGirlImg {
@@ -255,3 +255,8 @@ footer {
   .sidenav {width: 90px;}
 }
 
+p {
+  font-size: 22px;
+  margin-left: 100px; 
+  margin-right: 100px;
+}
