@@ -11,7 +11,7 @@ body {
 
 .buttons {
     margin: 0 auto;
-    width: 60%;
+    width: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -63,7 +63,8 @@ h2 {
 }
 
 .button-text {
-    padding:20px;
+    padding: 20px;
+    align-items:end;
 }
 
 #student-button {
@@ -139,14 +140,13 @@ ul {
 }
 
 .fade-out {
-    animation: fadeOutEffect 2s forwards;
-    animation-delay: 1s;
+    animation: fadeOutEffect 1s forwards;
+    animation-delay: 0s;
 }
 
 .fade-in {
-    animation-delay: 1s forwards;
-    animation: fadeInEffect 2s;
-
+    animation-delay: 0s forwards;
+    animation: fadeInEffect 1s;
 }
 
 @keyframes fadeOutEffect {
@@ -159,7 +159,8 @@ ul {
 }
 
 @keyframes fadeInEffect {
-    0% { opacity: 0;
+    0% { 
+        opacity: 0;
     }
     100% { 
         opacity: 1;
