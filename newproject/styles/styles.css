@@ -1,45 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+JP:wght@400;700&display=swap');
 
 html, body {
-    height: 100%;
+    height: 100vh;
 }
 
+p {
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+ 
 body {
-    box-sizing: border-box;
     font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%;
     margin: 0;
-    background-image: url("../images/tiles.png");
-    background-size: 100px;
-    background-repeat: repeat;
-    background-color: #333;
+    overflow: auto;
+    color: #333;
 }
- 
+
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    width: 100%;
     min-height: 100vh;
 }
 
 .page-content {
-    max-width: 90%;
-    background-color: #f5f5f5;
-    min-height: calc(100vh - 79.5px - 71.5px);
-    margin: 0 auto;
+    margin-top:70px;
+    flex:1;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+}
+
+
+
+a {
+    color: #437C89;
+    text-decoration: none;
+    
+}
+a:hover {
+    text-decoration: underline;
 }
 
 header {
     background-color: #333;
     color: white;
     padding:0;
-    max-height:100px;
 }
 
 nav {
-    max-width: 1100px;
+    z-index: 900;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -74,16 +92,16 @@ nav ul li{
     display: flex;
     justify-content: space-between;
     gap: 0px;
+    min-height: 100%;
 }
 
 .menu li a {
     color: white;
     text-decoration: none;
-    padding-left:20px;
-    padding-right:20px;
     padding-top: 30px;
     padding-bottom: 30px;
     transition: background-color .15s;
+    max-height: 75px;
 }
 
 .menu li a:hover {
@@ -96,6 +114,19 @@ nav ul li{
     display: inline-block;
 }
 
+.dropbtn {
+    font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+    background-color: #333;
+    height:68.83px;
+    z-index: 999;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+    color: white;
+    border: none;
+    margin: 0px;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -105,7 +136,7 @@ nav ul li{
     z-index: 999;
     width: 100%;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     padding: 0;
 }
 
@@ -114,9 +145,14 @@ nav ul li{
     padding: 0;
     text-decoration: none;
     display: block;
+    margin: 0;
 }
 
 .dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropbtn:hover {
     background-color: #555;
 }
 
@@ -126,25 +162,29 @@ nav ul li{
 
 
 .intro {
-    max-width: 70%;
-    margin: 100px auto;
-    padding: 0 20px;
+    background-color: #EEEEEE;
+    width: 60%;
+    margin: 10px auto;
+    padding: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 20px;
     align-items: center;
-    justify-items: right;
+    justify-items: center;
+    border-radius: 10px;
+    column-gap: 15px;
 }
 
 .intro .intro-image img {
     width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin:0 auto;
     max-width: 200px;
     border-radius: 50%;
 }
 
 .intro h1 {
-    height: 50px;
-    line-height: 25px;
+    height: 25px;
 }
 
 #languageText {
@@ -152,84 +192,31 @@ nav ul li{
 }
 
 .fade-out {
-    animation: fadeOutEffect 2s forwards;
+    animation: fadeOutEffect 0.5s forwards;
+    animation-delay: 0s;
 }
 
 .fade-in {
-    animation: fadeInEffect 2s forwards;
-    opacity: 0;  /* Starts from invisible state */
-}
-
-@keyframes fadeOutEffect {
-    0% { 
-        opacity: 1; 
-    }
-    100% { 
-        opacity: 0; 
-        transform: translateX(-25px);
-        filter: blur(1px);
-    }
-}
-
-@keyframes fadeInEffect {
-    0% { opacity: 0; 
-        transform: translateX(25px);
-        filter: blur(1px);
-    }
-    100% { 
-        opacity: 1;
-    }
+    animation: fadeInEffect 0.5s forwards;
+    animation-delay: 0s;
 }
 
 .spotlight {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    padding: 0 20px;
-    background-color: #ddd;
+    background-color: #EEEEEE;
+    width: 60%;
+    margin: 10px auto 10px auto;
     padding: 20px;
-    border-radius: 5px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-
-}
-
-footer a {
-    color: #ffcc00;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-    position: fixed;
-}
-
-@media screen and (max-width: 806px) {
-    h1 {
-        font-size: 16px;
-    }
-    h2 {
-        font-size: 14px;
-    }
-    nav ul {
-        font-size: 10px;
-    }
-    p {
-        font-size: 10px;
-    }
+    border-radius: 10px;
 }
 
 .fade-out {
-    animation: fadeOutEffect 2s forwards;
+    animation: fadeOutEffect 1s forwards;
+    animation-delay: 0s;
 }
 
 .fade-in {
-    animation: fadeInEffect 2s forwards;
+    animation-delay: 0s forwards;
+    animation: fadeInEffect 1s;
 }
 
 @keyframes fadeOutEffect {
@@ -242,10 +229,174 @@ footer a:hover {
 }
 
 @keyframes fadeInEffect {
-    0% { opacity: 0;
+    0% { 
+        opacity: 0;
     }
     100% { 
         opacity: 1;
+    }
+}
+
+.fade-out-name {
+    animation: fadeOutName 1s forwards ease-in;
+}
+
+.fade-in-name {
+    animation: fadeInName 1s forwards ease-out;
+}
+
+@keyframes fadeOutName {
+    0% { 
+        opacity: 1; 
+    }
+    100% { 
+        opacity: 0; 
+        transform: translateX(-25px);
+        filter: blur(1px);
+    }
+}
+
+@keyframes fadeInName {
+    0% { opacity: 0; 
+        transform: translateX(25px);
+        filter: blur(1px);
+    }
+    100% { 
+        opacity: 1;
+    }
+}
+
+.port-intro {
+    width:100%;
+    background-image: url('classstrip.jpg');
+    background-size:cover;
+    background-position: center;
+    height: 200px;
+    justify-items: center;
+    text-align: center;
+}
+
+.port-intro h1 {
+    margin: 0 auto;
+    padding-top: 55px;
+    font-size: 35px;
+    color: white;
+
+}
+
+.port-intro p {
+    color: white;
+}
+
+.portfolio {
+    margin: 20px auto;
+    display: grid;
+    flex-direction: row;
+    width: 70%;
+    text-align: center;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+}
+
+.portrio {
+    min-height:fit-content;
+    border-radius: 5px;
+    background-color: rgba(127, 255, 212, 0.459);
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+.portrio p {
+    padding-bottom:0;
+    margin-bottom: 0px;
+    font-size:small;
+}
+
+.portrio ul{
+    text-align: left;
+    padding:15px;
+    list-style-position:inside;
+}
+
+.portrio li{
+    margin:0;
+    font-size: 12px;
+}
+
+.learnmore {
+    background-color: #333;
+    color: white;
+    width: fit-content;
+    padding:10px;
+    margin:10px;
+    align-items: center;
+    border-radius: 5px;
+    margin-top:10px;
+}
+ 
+footer {
+    background-color: #333;
+    margin-top: auto;
+    color: white;
+    width: 100%;
+    height: 45px;
+    padding: auto 0;
+    text-align: center;
+    padding-bottom:0;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+footer a {
+    color: aquamarine;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    padding:0;
+}
+
+@media screen and (max-width: 806px) {
+    h1 {
+        font-size: 14px;
+        line-height: 1;
+    }
+    h2 {
+        font-size: 14px;
+    }
+    nav ul {
+        font-size: 14px;
+    }
+    .portrio li {
+        font-size: 10px;
+    }
+    .portrio p {
+        font-size: 10px;
+    }
+    p {
+        font-size: 14px;
+    }
+    footer {
+        padding-bottom:0;
+    }
+    .portfolio {
+        width:90%;
+    }
+    .learnmore {
+        font-size: 10px;
     }
 }
 
@@ -261,4 +412,24 @@ footer a:hover {
     backdrop-filter: blur(5px);  /* Add a blur effect */
     z-index: 9999;  /* Ensure it's above all other content */
     pointer-events: none;  /* Make sure it doesn't interfere with any interactions */
+}
+
+.construction {
+    margin: 20px 30px;
+}
+
+#contactinfo {
+    margin: 30px 30px;
+}
+
+#contactinfo h1 {
+    font-size: 22px;
+}
+
+#contactinfo li {
+    list-style-type: none;
+}
+
+#philosophy h1 {
+    margin-left: 30px;
 }
